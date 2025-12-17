@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# AI Resume Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An intelligent resume analysis tool powered by Google's Gemini AI that provides comprehensive feedback on resume quality, ATS compatibility, and actionable improvement recommendations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **ATS Score Analysis**: Get an overall ATS (Applicant Tracking System) compatibility score (0-100)
+- **Parsability Assessment**: Measure how easily ATS systems can extract data from your resume
+- **Keyword Matching**: Score based on industry-standard keywords for your role
+- **Resume Parsing**: Automatic extraction of:
+  - Candidate name and professional title
+  - Contact information (email, phone, location)
+  - Professional summary
+  - Work experience with descriptions
+  - Extracted skills
+- **Detailed Feedback**:
+  - Missing critical keywords for your role
+  - Resume strengths and weaknesses
+  - Formatting issues identification
+  - Skill breakdown by category
+- **Improvement Plan**: Prioritized actionable recommendations (High/Medium/Low) organized by category (Content/Keywords/Formatting)
+- **Visual Dashboard**: Interactive charts and analytics to visualize your resume performance
+- **PDF Export**: Download your analysis report as a PDF
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: Vite + React 19 with TypeScript
+- **AI**: Google Gemini API (@google/genai)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v18 or higher)
+- npm or yarn
+- Google Gemini API key
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone the repository:
+   git clone <repository-url>
+   cd ai-resume-analyzer
+  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Install dependencies: 
+   npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Set up environment variables:
+   Create a \.env.local\ file in the root directory and add your Google Gemini API key:
+   \\\
+   VITE_GEMINI_API_KEY=your_api_key_here
+   \\\
+
+### Development
+
+Run the development server:
+npm run dev
+
+The application will be available at http://localhost:5173
+
+
+## Usage
+
+1. **Upload Resume**: Drag and drop a PDF file or click to browse and select your resume
+2. **Wait for Analysis**: The AI will analyze your resume using Gemini AI
+3. **Review Results**: Examine your scores, feedback, and recommendations on the dashboard
+4. **Implement Improvements**: Use the improvement plan to enhance your resume
+5. **Export Report**: Download your analysis as a PDF for future reference
+
+## Analysis Metrics
+
+### ATS Score (0-100)
+
+Overall compatibility with Applicant Tracking Systems. Most resumes score between 40-80.
+
+### Parsability Score (0-100)
+
+How easily ATS can extract data. Penalizes use of:
+
+- Multiple columns
+- Tables
+- Icons and graphics
+- Complex layouts
+
+### Keyword Match Score (0-100)
+
+Industry-standard keyword coverage for the inferred role with emphasis on hard skills.
