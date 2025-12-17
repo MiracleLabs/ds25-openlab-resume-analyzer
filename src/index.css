@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* -- Fonts -- */
+  /* Updated to Montserrat */
+  --font-sans: "Montserrat", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* -- Brand Colors -- */
+  --color-brand-darkblue: #0b2a4a;
+  --color-brand-mediumblue: #2368a0;
+  --color-brand-lightblue: #00aae7;
+  --color-brand-black: #0b0b14;
+  --color-brand-darkgrey: #4f5668;
+  --color-brand-lightgrey: #d4d7de;
+  --color-brand-red: #ef4048;
+
+  /* -- Custom Shadows -- */
+  --shadow-glow: 0 10px 30px;
+  --shadow-heavy: 0 12px 30px;
+
+  /* -- Animations -- */
+  --animate-fade-in: fade-in 0.35s ease forwards;
+  --animate-progress: progress 6s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* -- Base Styles -- */
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-brand-black);
+    background-color: var(--color-slate-50);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+/* -- Utilities / Components -- */
+@layer utilities {
+  .shadow-brand-lightblue\/20 {
+    box-shadow: 0 10px 30px
+      color-mix(in srgb, var(--color-brand-lightblue), transparent 80%);
+  }
+
+  .shadow-brand-darkblue\/20 {
+    box-shadow: 0 12px 30px
+      color-mix(in srgb, var(--color-brand-darkblue), transparent 80%);
+  }
+
+  .recharts-responsive-container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
