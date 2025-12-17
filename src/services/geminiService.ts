@@ -164,6 +164,7 @@ export const analyzeResumeWithGemini = async (
   }
 
   const ai = new GoogleGenAI({ apiKey: apiKey });
+  
 
   try {
     const response = await ai.models.generateContent({
