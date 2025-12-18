@@ -1,4 +1,4 @@
-# AI Resume Analyzer
+# AI Resume Analyser
 
 An intelligent resume analysis tool powered by Google's Gemini AI that provides comprehensive feedback on resume quality, ATS compatibility, and actionable improvement recommendations.
 
@@ -63,7 +63,7 @@ The application will be available at http://localhost:5173
 ## Usage
 
 1. **Upload Resume**: Drag and drop a PDF file or click to browse and select your resume
-2. **Wait for Analysis**: The AI will analyze your resume using Gemini AI
+2. **Wait for Analysis**: The AI will analyse your resume using Gemini AI
 3. **Review Results**: Examine your scores, feedback, and recommendations on the dashboard
 4. **Implement Improvements**: Use the improvement plan to enhance your resume
 5. **Export Report**: Download your analysis as a PDF for future reference
@@ -76,7 +76,7 @@ Overall compatibility with Applicant Tracking Systems. Most resumes score betwee
 
 ### Parsability Score (0-100)
 
-How easily ATS can extract data. Penalizes use of:
+How easily ATS can extract data. Penalises use of:
 
 - Multiple columns
 - Tables
@@ -86,3 +86,7 @@ How easily ATS can extract data. Penalizes use of:
 ### Keyword Match Score (0-100)
 
 Industry-standard keyword coverage for the inferred role with emphasis on hard skills.
+
+### Lab coordinators
+- Arief Mohammed - Research Associate
+- Haneesh Bandaru - Research Associate
