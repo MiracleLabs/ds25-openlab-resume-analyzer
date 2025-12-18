@@ -90,3 +90,6 @@ Industry-standard keyword coverage for the inferred role with emphasis on hard s
 ### Lab coordinators
 - Arief Mohammed - Research Associate
 - Haneesh Bandaru - Research Associate
+
+**Note:**
+Please find the attached pdf in the repo.
